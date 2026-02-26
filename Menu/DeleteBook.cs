@@ -20,7 +20,6 @@ namespace Biblioteka
                     break;
                 }
             }
-
             Menu.MainMenu();
         }
     }

@@ -19,7 +19,6 @@ namespace Biblioteka
             Console.WriteLine("Podaj liczbe stron");
             int pages = int.Parse(Console.ReadLine());
 
-
             if (year <= 0 || year == null)
             {
                 Console.WriteLine("Nieprawidłowy rok wydania. Rok musi być większy od 0.");
@@ -28,9 +27,9 @@ namespace Biblioteka
             {
                 Console.WriteLine("Nieprawidłowa liczba stron");
             }
-
             
             Book newBook = new Book
+
             {
                 Id = NextId++,
                 Title = title,
@@ -41,12 +40,9 @@ namespace Biblioteka
             };
             Library.books.Add(newBook);
             
-
-
             Console.WriteLine("Książka została dodana");
             Menu.MainMenu();
             return newBook;
-
         }
     }
 }
