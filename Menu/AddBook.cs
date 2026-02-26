@@ -26,13 +26,21 @@ namespace Biblioteka
             {
                 Console.WriteLine("Nieprawidłowa liczba stron");
             }
-                return new Book()
-                {
-                    Title = title,
-                    Author = author,
-                    Year = year,
-                    Pages = pages
-                };
+            Book newBook = new Book
+            {
+                Title = title,
+                Author = author,
+                Year = year,
+                Pages = pages
+                
+            };
+            Library.books.Add(newBook);
+
+
+            Console.WriteLine("Książka została dodana");
+            Menu.MainMenu();
+            return newBook;
+
         }
     }
 }

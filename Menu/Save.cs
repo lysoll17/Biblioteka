@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static System.Net.WebRequestMethods;
 
 namespace Biblioteka
 {
     internal class Save
     {
-        public static void SaveToFile(Book book)
+        public static void SaveFile()
         {
-            StreamWriter writer = new StreamWriter("dane.txt", append: true);
-            writer.WriteLine($"{book.Title} {book.Author} {book.Year} {book.Pages}");
-            writer.Close();
-            Console.WriteLine("Zapisano");
+            using (StreamWriter writer = new StreamWriter("dane.txt", append: true))
+            {
+                foreach (Book book in Library.books)
+                {
+                    writer.WriteLine($"{book.Title} {book.Author} {book.Year} {book.Pages}"); 
+                    
+                }
+            }
+            Console.WriteLine("Dane zostały zapisane do pliku");
 
-            Start.Main();
+            Menu.MainMenu();
         }
     }
 }

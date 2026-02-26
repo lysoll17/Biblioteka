@@ -11,24 +11,33 @@ namespace Biblioteka
             Console.WriteLine("1 - Dodaj książkę");
             Console.WriteLine("2 - Wyświetl wszystkie książki");
             Console.WriteLine("3 - Wyszukaj książkę");
-            Console.WriteLine("4. Zakończ program");
+            Console.WriteLine("4 - Zapisz do pliku");
+            Console.WriteLine("5 - Wczytaj z pliku");
+            Console.WriteLine("6. Zakończ program");
             int choice = int.Parse(Console.ReadLine());
 
             if (choice == 1)
             {
                 Book book = AddBook.Add();
-                Save.SaveToFile(book);
-
+                Library.books.Add(book);
             }
             else if (choice == 2)
             {
-
+                ShowBooks.Show();
             }
             else if (choice == 3)
             {
+                FindBook.Find();
+            }
+            else if(choice == 4)
+            {
+                Save.SaveFile();
+            }
+            else if(choice == 5)
+            {
 
             }
-            else if (choice == 4)
+            else if (choice == 6)
             {
                 Environment.Exit(0);
             }
