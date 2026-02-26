@@ -12,7 +12,7 @@ namespace Biblioteka
             {
                 foreach (Book book in Library.books)
                 {
-                    writer.WriteLine($"{book.Title} {book.Author} {book.Year} {book.Pages}"); 
+                    writer.WriteLine($"{book.Id} {book.Title} {book.Author} {book.Year} {book.Pages}"); 
                     
                 }
             }

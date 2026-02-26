@@ -13,7 +13,8 @@ namespace Biblioteka
             Console.WriteLine("3 - Wyszukaj książkę");
             Console.WriteLine("4 - Zapisz do pliku");
             Console.WriteLine("5 - Wczytaj z pliku");
-            Console.WriteLine("6. Zakończ program");
+            Console.WriteLine("6 - Usuń książke");
+            Console.WriteLine("7 - Zakończ program");
             int choice = int.Parse(Console.ReadLine());
 
             if (choice == 1)
@@ -35,9 +36,13 @@ namespace Biblioteka
             }
             else if(choice == 5)
             {
-
+                LoadFile.Load();
             }
-            else if (choice == 6)
+            else if(choice == 6)
+            {
+                DeleteBook.Delete();
+            }
+            else if (choice == 7)
             {
                 Environment.Exit(0);
             }

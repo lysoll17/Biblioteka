@@ -4,10 +4,12 @@ using System.Text;
 
 namespace Biblioteka
 {
-    internal class AddBook
+    internal class  AddBook
     {
+        public static int NextId = 1;
         public static Book Add()
         {
+            
             Console.WriteLine("Podaj tytuł książki:");
             string title = Console.ReadLine();
             Console.WriteLine("Podaj autora książki:");
@@ -26,8 +28,11 @@ namespace Biblioteka
             {
                 Console.WriteLine("Nieprawidłowa liczba stron");
             }
+
+            
             Book newBook = new Book
             {
+                Id = NextId++,
                 Title = title,
                 Author = author,
                 Year = year,
@@ -35,6 +40,7 @@ namespace Biblioteka
                 
             };
             Library.books.Add(newBook);
+            
 
 
             Console.WriteLine("Książka została dodana");

@@ -14,10 +14,11 @@ namespace Biblioteka
                 Console.WriteLine("Lista nic nie zawiera");
                 return;
             }
+            Library.Sort();
 
             foreach (var book in Library.books)
             {
-                Console.WriteLine($"Tytuł: {book.Title}, Autor: {book.Author}, Year: {book.Year}, Pages: {book.Pages}");
+                Console.WriteLine($"Id: {book.Id} Tytuł: {book.Title}, Autor: {book.Author}, Year: {book.Year}, Pages: {book.Pages}");
             }
 
             Menu.MainMenu();
